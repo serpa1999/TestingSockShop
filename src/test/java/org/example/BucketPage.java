@@ -1,7 +1,6 @@
 package org.example;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -19,5 +18,8 @@ public class BucketPage {
 	}
 	public long getCartTotal() {
 		return Integer.parseInt($(By.id("cartTotal")).getText().substring(1, 3));
+	}
+	public void clearBucket() {
+		$x("//*[@id=\"cart-list\"]/tr/td[7]/a").click();
 	}
 }

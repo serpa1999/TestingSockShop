@@ -29,7 +29,10 @@ public class OpenSiteTest extends SockStoreTest{
 		mainPage.clickOnCatalogue();
 		mainPage.addToCart();
 		mainPage.clickOnBasket();
-		Assert.assertEquals(new BucketPage().getCartTotal(), new BucketPage().getTotalCost());
-		sleep(5000);
+		sleep(1000);
+		BucketPage bucketPage = new BucketPage();
+		Assert.assertEquals(bucketPage.getCartTotal(), bucketPage.getTotalCost());
+		bucketPage.clearBucket();
+		sleep(1000);
 	}
 }
