@@ -3,8 +3,8 @@ package org.example;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.After;
+import org.junit.Before;
 
 abstract class SockStoreTest {
 
@@ -17,12 +17,12 @@ abstract class SockStoreTest {
 		Configuration.headless = false;
 	}
 
-	@BeforeAll
+	@Before
 	public void init() {
 		setup();
 	}
 
-	@AfterAll
+	@After
 	public void shotDown() {
 		Selenide.closeWebDriver();
 	}
