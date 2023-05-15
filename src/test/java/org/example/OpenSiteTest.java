@@ -22,10 +22,15 @@ public class OpenSiteTest extends SockStoreTest{
 	public void mainTest() {
 		MainPage mainPage = new MainPage(BASE_URL);
 		RegisterLoginForm registerLoginForm = new RegisterLoginForm();
-		/*mainPage.clickOnRegister();
-		registerLoginForm.register();*/
-		mainPage.clickOnLogin();
-		registerLoginForm.login();
+
+		//для первого запуска (регистрации), при повторе тестов закомментировать
+		mainPage.clickOnRegister();
+		registerLoginForm.register();
+
+		//для повторных запусков убрать комментарии
+		/*mainPage.clickOnLogin();
+		registerLoginForm.login();*/
+
 		mainPage.clickOnCatalogue();
 		mainPage.addToCart();
 		mainPage.clickOnBasket();
